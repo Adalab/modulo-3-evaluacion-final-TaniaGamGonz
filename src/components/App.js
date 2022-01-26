@@ -1,24 +1,35 @@
 import "../styles/App.scss";
-import { Link, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 import getByHouse from "../services/callToApi";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
+import Filters from "./Filters";
 
 function App() {
-  //Variables
   //States
   const [listOfCharacters, setListOfCharacters] = useState([]);
-  //No states
-  //Functions
+  const [selectedHouse, setSelectedHouse] = useState("gryffindor");
+  const [filterName, setFilterName] = useState("");
   //UseEffect
   useEffect(() => {
-    getByHouse().then((response) => {
+    getByHouse(selectedHouse).then((response) => {
       setListOfCharacters(response);
     });
-  }, []);
+  }, [selectedHouse]);
+
+  const charactersFiltered = listOfCharacters.filter((character) => {
+    return character.name.toLowerCase().includes(filterName.toLowerCase());
+  });
 
   //Render functions
-
+  const renderCharacterDetail = (props) => {
+    const routeId = props.match.params.name;
+    const foundCharacter = listOfCharacters.find(
+      (character) => character.name === routeId
+    );
+    return <CharacterDetail character={foundCharacter} />;
+  };
   //Handler functions
 
   return (
@@ -26,41 +37,20 @@ function App() {
       <header>
         <h1>Harry Potter </h1>
       </header>
-      <section>
-        <form>
-          <label htmlFor="">
-            <input type="text" name="name" id="name" />
-          </label>
-          <select name="houses" id="houses">
-            <option value="gryffindor">Gryffindor</option>
-            <option value="slytherin">Slytherin</option>
-            <option value="hufflepuff">Hufflepuff</option>
-            <option value="ravenclaw">Ravenclaw</option>
-          </select>
-        </form>
-      </section>
-      <CharacterList characters={listOfCharacters} />
-      <section>
-        <a href=""></a>
-        <article>
-          <img src="" alt="" />
-          <div>
-            <p>Nombre</p>
-            <p>
-              <span>Estatus:</span>
-            </p>
-            <p>
-              <span>Especie:</span>
-            </p>
-            <p>
-              <span>Genero:</span>
-            </p>
-            <p>
-              <span>Casa:</span>
-            </p>
-          </div>
-        </article>
-      </section>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Filters
+              setSelectedHouse={setSelectedHouse}
+              selectedHouse={selectedHouse}
+              filterName={filterName}
+              setFilterName={setFilterName}
+            />
+            <CharacterList characters={charactersFiltered} />
+          </Route>
+          <Route path="/character/:name" render={renderCharacterDetail}></Route>
+        </Switch>
+      </main>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 //import PropTypes from 'prop-types';
 
+import { Link } from "react-router-dom";
+
 const CharacterCard = ({ photo, name, specie }) => {
   return (
-    <a>
+    <Link to={`/character/${name}`}>
       <article>
         <img
           src={
@@ -17,7 +19,7 @@ const CharacterCard = ({ photo, name, specie }) => {
           <p>{specie}</p>
         </section>
       </article>
-    </a>
+    </Link>
   );
 };
 

@@ -1,5 +1,7 @@
-const getByHouse = () => {
-  return fetch("http://hp-api.herokuapp.com/api/characters/house/gryffindor")
+const getByHouse = (selectedHouse) => {
+  return fetch(
+    `http://hp-api.herokuapp.com/api/characters/house/${selectedHouse}`
+  )
     .then((response) => response.json())
     .then((response) => {
       const infoCleaned = response.map((character) => {
