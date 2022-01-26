@@ -2,6 +2,7 @@ import "../styles/App.scss";
 import { Link, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import getByHouse from "../services/callToApi";
+import CharacterList from "./CharacterList";
 
 function App() {
   //Variables
@@ -17,26 +18,6 @@ function App() {
   }, []);
 
   //Render functions
-
-  const renderCharacters = () => {
-    return listOfCharacters.map((character, index) => {
-      return (
-        <li key="index">
-          <article>
-            <img
-              src={character.photo}
-              alt={character.name}
-              title={character.name}
-            />
-            <p>
-              <p>{character.name}</p>
-              <p>{character.specie}</p>
-            </p>
-          </article>
-        </li>
-      );
-    });
-  };
 
   //Handler functions
 
@@ -58,9 +39,7 @@ function App() {
           </select>
         </form>
       </section>
-      <section>
-        <ul>{renderCharacters()}</ul>
-      </section>
+      <CharacterList characters={listOfCharacters} />
       <section>
         <a href=""></a>
         <article>
