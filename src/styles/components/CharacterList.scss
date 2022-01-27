@@ -1,9 +1,10 @@
 .character-list {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
   justify-content: space-around;
-
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
   .card {
-    margin: 10px;
+    justify-self: center;
   }
 }

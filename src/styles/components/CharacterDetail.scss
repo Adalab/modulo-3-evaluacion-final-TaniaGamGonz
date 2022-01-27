@@ -5,19 +5,51 @@
 .detail {
   display: flex;
   justify-content: center;
+
   &__link {
     color: $text-color;
     font-family: "harry";
     font-size: 3rem;
   }
+  &__house-icon {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    right: -20px;
+    position: absolute;
+    @media (min-width: 768px) {
+      width: 150px;
+      height: 150px;
+      top: -50px;
+      right: -50px;
+    }
+  }
+  &__dead-icon {
+    width: 70px;
+    height: 70px;
+    top: 233px;
+    left: -13px;
+    position: absolute;
+    z-index: 1;
+    @media (min-width: 768px) {
+      top: 172px;
+      left: -32px;
+    }
+  }
   &__article {
-    width: 700px;
+    width: 90%;
+    position: relative;
     background-color: red;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    justify-content: center;
-    gap: 40px;
+    margin: 0 auto;
     padding: 10px;
+    @media (min-width: 768px) {
+      position: relative;
+      width: 700px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      justify-content: center;
+      gap: 40px;
+    }
   }
   &__img {
     width: 100%;
@@ -32,4 +64,7 @@
 }
 .bold {
   font-weight: bold;
+}
+.dead {
+  filter: grayscale(100%);
 }

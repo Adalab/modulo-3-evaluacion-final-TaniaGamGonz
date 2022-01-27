@@ -2,9 +2,28 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../styles/components/CharacterDetail.scss";
 import translateSpecie from "../services/translateSpecies";
+import gryffindorLogo from "../images/gryffindor.png";
+import slytherinLogo from "../images/slytherin.png";
+import hufflepuffLogo from "../images/hufflepuff.png";
+import ravenclawLogo from "../images/ravenclaw.png";
+import noFoto from "../images/invisible.png";
+import dead from "../images/rip.png";
 
 const CharacterDetail = ({ character }) => {
   const { photo, name, isAlive, specie, gender, house } = character;
+  const setIconHouse = (house) => {
+    if (house === "Gryffindor") {
+      return gryffindorLogo;
+    } else if (house === "Slytherin") {
+      return slytherinLogo;
+    } else if (house === "Hufflepuff") {
+      return hufflepuffLogo;
+    } else if (house === "Ravenclaw") {
+      return ravenclawLogo;
+    } else {
+      return null;
+    }
+  };
 
   return (
     <section className="detail">
@@ -13,7 +32,22 @@ const CharacterDetail = ({ character }) => {
           Volver
         </Link>
         <article className="detail__article">
-          <img src={photo} alt={name} title={name} className="detail__img" />
+          <img
+            src={setIconHouse(house)}
+            alt=""
+            className={`detail__house-icon ${house ? null : "hidden"}`}
+          />
+          <img
+            src={dead}
+            alt=""
+            class={`detail__dead-icon ${isAlive ? "hidden" : null}`}
+          />
+          <img
+            src={photo || noFoto}
+            alt={name}
+            title={name}
+            className={`detail__img ${isAlive ? null : "dead"}`}
+          />
           <section className="detail__info">
             <p className="bold">{name}</p>
             <p>

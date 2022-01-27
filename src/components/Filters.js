@@ -17,6 +17,10 @@ const Filters = ({
   const handleSelect = (ev) => {
     setSelectedHouse(ev.currentTarget.value);
   };
+  const handleReset = () => {
+    setFilterName("");
+    setSelectedHouse("gryffindor");
+  };
   return (
     <section>
       <form onSubmit={handleSubmit} className="form">
@@ -48,6 +52,9 @@ const Filters = ({
               <option value="ravenclaw">Ravenclaw</option>
             </select>
           </label>
+          <button type="reset" onClick={handleReset} className="btn">
+            Reinicia la búsqueda
+          </button>
         </div>
       </form>
     </section>

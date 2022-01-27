@@ -5,7 +5,7 @@ const translateSpecie = (specie, gender) => {
     return "Humano";
   } else if (specie === "half-giant") {
     return "Medio gigante";
-  } else if (specie === "werefolf") {
+  } else if (specie === "werewolf") {
     return "Licántropo";
   } else if (specie === "cat") {
     return "Gata";
