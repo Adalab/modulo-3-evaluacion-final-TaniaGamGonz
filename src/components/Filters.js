@@ -1,3 +1,4 @@
+import "../styles/components/Filters.scss";
 import PropTypes from "prop-types";
 
 const Filters = ({
@@ -18,34 +19,49 @@ const Filters = ({
   };
   return (
     <section>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Buscar por personaje
-          <input
-            type="text"
-            name="name"
-            id="name"
-            onChange={handleInput}
-            value={filterName}
-          />
-        </label>
-        <select
-          name="houses"
-          id="houses"
-          onChange={handleSelect}
-          value={selectedHouse}
-        >
-          Selecciona la casa
-          <option value="gryffindor">Gryffindor</option>
-          <option value="slytherin">Slytherin</option>
-          <option value="hufflepuff">Hufflepuff</option>
-          <option value="ravenclaw">Ravenclaw</option>
-        </select>
+      <form onSubmit={handleSubmit} className="form">
+        <div>
+          <label htmlFor="name" className="form__label">
+            Buscar por personaje
+            <input
+              className="form__input"
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleInput}
+              value={filterName}
+              placeholder="Harry Potter"
+            />
+          </label>
+          <label htmlFor="houses" className="form__label">
+            Buscar por casa
+            <select
+              className="form__select"
+              name="houses"
+              id="houses"
+              onChange={handleSelect}
+              value={selectedHouse}
+            >
+              <option value="gryffindor">Gryffindor</option>
+              <option value="slytherin">Slytherin</option>
+              <option value="hufflepuff">Hufflepuff</option>
+              <option value="ravenclaw">Ravenclaw</option>
+            </select>
+          </label>
+        </div>
       </form>
     </section>
   );
 };
 
-Filters.propTypes = {};
+Filters.defaultProps = {
+  selectedHouse: "gryffindor",
+};
+Filters.propTypes = {
+  setSelectedHouse: PropTypes.func.isRequired,
+  selectedHouse: PropTypes.string.isRequired,
+  setFilterName: PropTypes.func.isRequired,
+  filterName: PropTypes.string.isRequired,
+};
 
 export default Filters;

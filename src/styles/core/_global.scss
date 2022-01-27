@@ -1,0 +1,24 @@
+//Little reset
+@import "./variables";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+//Global css
+html {
+  font-size: 10px;
+  color: $text-color;
+}
+
+body {
+  background-color: $secondary-color;
+}

@@ -5,6 +5,7 @@ import getByHouse from "../services/callToApi";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
+import logo from "../images/logoHarry.png";
 
 function App() {
   //States
@@ -34,8 +35,9 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>Harry Potter </h1>
+      <header className="header">
+        <img src={logo} alt="titulo" className="header__logo" />
+        <h1>Buscador de personajes de la saga </h1>
       </header>
       <main>
         <Switch>

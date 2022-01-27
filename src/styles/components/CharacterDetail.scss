@@ -1,0 +1,35 @@
+@import "../core/variables";
+@import "../core/fonts";
+@import "../core/global";
+
+.detail {
+  display: flex;
+  justify-content: center;
+  &__link {
+    color: $text-color;
+    font-family: "harry";
+    font-size: 3rem;
+  }
+  &__article {
+    width: 700px;
+    background-color: red;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px;
+  }
+  &__img {
+    width: 100%;
+    grid-column: 1/2;
+  }
+  &__info {
+    font-size: 2.5rem;
+    grid-column: 2/4;
+    align-self: center;
+    line-height: 3.5rem;
+  }
+}
+.bold {
+  font-weight: bold;
+}
