@@ -4,14 +4,14 @@ Project made in react, a simple SPA where you can do a request to an Api and sea
 
 ## Tecnologies
 
--ReactJS
--ReactDOM
--PropTypes and PropDefault
--Components in React
--Html5
--Sass
--Request to the API managed by Fetch and promises
--UseStates and UseEffect
+- ReactJS
+- ReactDOM
+- PropTypes and PropDefault
+- Components in React
+- Html5
+- Sass
+- Request to the API managed by Fetch and promises
+- UseStates and UseEffect
 
 ## Deployment
 
