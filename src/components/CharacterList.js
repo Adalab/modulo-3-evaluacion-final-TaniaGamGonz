@@ -14,7 +14,6 @@ const CharacterList = ({ characters }) => {
         }
         return 0;
       });
-      console.log(ordenedCharacters);
       return ordenedCharacters.map((character, index) => {
         return (
           <li className="card" key={index}>

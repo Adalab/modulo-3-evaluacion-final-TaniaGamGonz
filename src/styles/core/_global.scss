@@ -1,5 +1,6 @@
 //Little reset
 @import "./variables";
+@import "./fonts";
 * {
   padding: 0;
   margin: 0;
@@ -17,12 +18,15 @@ a {
 html {
   font-size: 10px;
   color: $text-color;
+  font-family: handWritting;
 }
 
-body {
-  background-image: url(../../images/wallpaper.jpeg);
-  background-repeat: repeat;
+.link {
+  font-family: harry;
+  font-size: 3rem;
+  color: $text-color;
 }
+
 .hidden {
   display: none;
 }

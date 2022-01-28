@@ -6,6 +6,8 @@ const Filters = ({
   selectedHouse,
   setFilterName,
   filterName,
+  selectedAncestry,
+  setSelectedAncestry,
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -14,48 +16,65 @@ const Filters = ({
     setFilterName(ev.currentTarget.value);
   };
 
-  const handleSelect = (ev) => {
+  const handleSelectHouses = (ev) => {
     setSelectedHouse(ev.currentTarget.value);
+  };
+  const handleSelectAncestry = (ev) => {
+    setSelectedAncestry(ev.currentTarget.value);
   };
   const handleReset = () => {
     setFilterName("");
     setSelectedHouse("gryffindor");
   };
+
   return (
-    <section>
+    <section className="filters">
       <form onSubmit={handleSubmit} className="form">
-        <div>
-          <label htmlFor="name" className="form__label">
-            Buscar por personaje
-            <input
-              className="form__input"
-              type="text"
-              name="name"
-              id="name"
-              onChange={handleInput}
-              value={filterName}
-              placeholder="Harry Potter"
-            />
-          </label>
-          <label htmlFor="houses" className="form__label">
-            Buscar por casa
-            <select
-              className="form__select"
-              name="houses"
-              id="houses"
-              onChange={handleSelect}
-              value={selectedHouse}
-            >
-              <option value="gryffindor">Gryffindor</option>
-              <option value="slytherin">Slytherin</option>
-              <option value="hufflepuff">Hufflepuff</option>
-              <option value="ravenclaw">Ravenclaw</option>
-            </select>
-          </label>
-          <button type="reset" onClick={handleReset} className="btn">
-            Reinicia la búsqueda
-          </button>
-        </div>
+        <label htmlFor="name" className="form__label">
+          Buscar por personaje
+          <input
+            className="form__input"
+            type="text"
+            name="name"
+            id="name"
+            onChange={handleInput}
+            value={filterName}
+            placeholder="Harry Potter"
+          />
+        </label>
+        <label htmlFor="houses" className="form__label">
+          Buscar por casa
+          <select
+            className="form__select"
+            name="houses"
+            id="houses"
+            onChange={handleSelectHouses}
+            value={selectedHouse}
+          >
+            <option value="gryffindor">Gryffindor</option>
+            <option value="slytherin">Slytherin</option>
+            <option value="hufflepuff">Hufflepuff</option>
+            <option value="ravenclaw">Ravenclaw</option>
+          </select>
+        </label>
+        <label htmlFor="ancestry" className="form__label">
+          Buscar por ancestros
+          <select
+            className="form__select"
+            name="ancestry"
+            id="ancestry"
+            onChange={handleSelectAncestry}
+            value={selectedAncestry}
+          >
+            <option value="">Cualquiera</option>
+            <option value="pure-blood">Sangre pura</option>
+            <option value="half-blood">Sangre mestiza</option>
+            <option value="muggleborn">Sangre sucia</option>
+          </select>
+        </label>
+        <button type="reset" onClick={handleReset} className="btn">
+          Reinicia la búsqueda
+        </button>
       </form>
     </section>
   );

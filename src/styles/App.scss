@@ -13,9 +13,11 @@
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(181, 181, 181, 0.2413340336134454) 10%,
-    rgba(74, 74, 74, 0.5438550420168067) 61%,
-    rgba(38, 38, 38, 0.6110819327731092) 84%
+    rgba(181, 181, 181, 0) 7%,
+    rgba(119, 119, 119, 0) 27%,
+    rgba(89, 89, 89, 0.10127801120448177) 45%,
+    rgba(37, 37, 37, 0.31976540616246496) 64%,
+    rgba(0, 0, 0, 1) 84%
   );
 
   h1 {
@@ -32,4 +34,11 @@
       width: 500px;
     }
   }
+}
+.app {
+  background-color: #08102e;
+  background-image: url(../images/wallpaper.jpeg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
 }

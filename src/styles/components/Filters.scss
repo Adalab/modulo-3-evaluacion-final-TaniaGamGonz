@@ -1,42 +1,47 @@
 @import "../core/variables";
-.form {
+
+.filters {
   padding: 15px;
   margin-bottom: 10px;
-  div {
+  .form {
     margin: 0 auto;
     width: fit-content;
     display: flex;
     flex-direction: column;
-  }
-  &__label {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    &:last-of-type {
+
+    &__label {
+      width: 100%;
+      padding: 10px;
+      display: flex;
       justify-content: space-between;
+      font-size: 2rem;
+    }
+    &__input,
+    &__select {
+      width: 200px;
+      outline: none;
+      margin-left: 10px;
+      padding: 5px;
+      border: 2px solid $primary-color;
+      border-radius: 1px;
+      color: $text-color;
+      background-color: transparent;
+      font-family: inherit;
+      font-size: 1.7rem;
     }
   }
-  &__input,
-  &__select {
-    width: 200px;
-    outline: none;
-    margin-left: 10px;
+  .btn {
+    border: 1px solid $primary-color;
     padding: 5px;
-    border: 2px solid $primary-color;
-    border-radius: 1px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.5s;
     color: $text-color;
-    background-color: transparent;
-  }
-}
-.btn {
-  border: 1px solid $primary-color;
-  padding: 5px;
-  width: 200px;
-  background-color: transparent;
-  transition: all 0.5s;
-  color: $text-color;
-  margin: 0 auto;
-  &:hover {
-    background-color: $primary-color;
+    margin: 0 auto;
+    font-family: inherit;
+    font-size: 2rem;
+    &:hover {
+      background-color: $primary-color;
+    }
   }
 }

@@ -12,6 +12,7 @@ const getByHouse = (selectedHouse) => {
           house: character.house,
           isAlive: character.alive,
           gender: character.gender,
+          ancestry: character.ancestry,
         };
         return characterInfo;
       });

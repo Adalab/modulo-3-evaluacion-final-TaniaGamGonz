@@ -6,12 +6,14 @@ import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 import logo from "../images/logoHarry.png";
+import NotFound from "./NotFound";
 
 function App() {
   //States
   const [listOfCharacters, setListOfCharacters] = useState([]);
   const [selectedHouse, setSelectedHouse] = useState("gryffindor");
   const [filterName, setFilterName] = useState("");
+  const [selectedAncestry, setSelectedAncestry] = useState("");
   //UseEffect
   useEffect(() => {
     getByHouse(selectedHouse).then((response) => {
@@ -19,9 +21,13 @@ function App() {
     });
   }, [selectedHouse]);
 
-  const charactersFiltered = listOfCharacters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const charactersFiltered = listOfCharacters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return character.ancestry === selectedAncestry;
+    });
 
   //Render functions
   const renderCharacterDetail = (props) => {
@@ -29,12 +35,16 @@ function App() {
     const foundCharacter = listOfCharacters.find(
       (character) => character.name === routeId
     );
-    return <CharacterDetail character={foundCharacter} />;
+    if (foundCharacter) {
+      return <CharacterDetail character={foundCharacter} />;
+    } else {
+      return <NotFound />;
+    }
   };
   //Handler functions
 
   return (
-    <div>
+    <div className="app">
       <header className="header">
         <img src={logo} alt="titulo" className="header__logo" />
         <h1>Buscador de personajes de la saga </h1>
@@ -47,6 +57,8 @@ function App() {
               selectedHouse={selectedHouse}
               filterName={filterName}
               setFilterName={setFilterName}
+              selectedAncestry={selectedAncestry}
+              setSelectedAncestry={setSelectedAncestry}
             />
             <CharacterList characters={charactersFiltered} />
           </Route>
