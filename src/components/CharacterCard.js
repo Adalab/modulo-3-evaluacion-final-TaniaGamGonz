@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import noFoto from "../images/invisible.png";
 import translateSpecie from "../services/translateSpecies";
 
-const CharacterCard = ({ photo, name, specie, gender }) => {
+const CharacterCard = ({ photo, name, specie, gender, id }) => {
   return (
-    <Link to={`/character/${name}`}>
+    <Link to={`/character/${id}`}>
       <article className="character-card">
         <div className="character-card__img--container">
           <img

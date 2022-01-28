@@ -12,6 +12,7 @@ function App() {
   const [listOfCharacters, setListOfCharacters] = useState([]);
   const [selectedHouse, setSelectedHouse] = useState("gryffindor");
   const [filterName, setFilterName] = useState("");
+  const [filterSpecie, setFilterSpecie] = useState("");
   //UseEffect
   useEffect(() => {
     getByHouse(selectedHouse).then((response) => {
@@ -19,16 +20,23 @@ function App() {
     });
   }, [selectedHouse]);
 
-  const charactersFiltered = listOfCharacters.filter((character) => {
-    return character.name.toLowerCase().includes(filterName.toLowerCase());
-  });
+  const charactersFiltered = listOfCharacters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterName.toLowerCase());
+    })
+    .filter((character) => {
+      return character.specie
+        .toLowerCase()
+        .includes(filterSpecie.toLowerCase());
+    });
 
   //Render functions
   const renderCharacterDetail = (props) => {
-    const routeId = props.match.params.name;
-    const foundCharacter = listOfCharacters.find(
-      (character) => character.name === routeId
-    );
+    const routeId = parseInt(props.match.params.id);
+    const foundCharacter = listOfCharacters.find((character) => {
+      console.log(routeId, character.id);
+      return character.id === routeId;
+    });
     return <CharacterDetail character={foundCharacter} />;
   };
   //Handler functions
@@ -47,10 +55,12 @@ function App() {
               selectedHouse={selectedHouse}
               filterName={filterName}
               setFilterName={setFilterName}
+              setFilterSpecie={setFilterSpecie}
+              filterSpecie={filterSpecie}
             />
             <CharacterList characters={charactersFiltered} />
           </Route>
-          <Route path="/character/:name" render={renderCharacterDetail}></Route>
+          <Route path="/character/:id" render={renderCharacterDetail}></Route>
         </Switch>
       </main>
     </div>

@@ -4,8 +4,9 @@ const getByHouse = (selectedHouse) => {
   )
     .then((response) => response.json())
     .then((response) => {
-      const infoCleaned = response.map((character) => {
+      const infoCleaned = response.map((character, index) => {
         const characterInfo = {
+          id: index,
           photo: character.image,
           name: character.name,
           specie: character.species,

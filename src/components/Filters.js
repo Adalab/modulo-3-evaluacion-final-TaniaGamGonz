@@ -6,12 +6,17 @@ const Filters = ({
   selectedHouse,
   setFilterName,
   filterName,
+  filterSpecie,
+  setFilterSpecie,
 }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
   const handleInput = (ev) => {
     setFilterName(ev.currentTarget.value);
+  };
+  const handleInputSpecie = (ev) => {
+    setFilterSpecie(ev.currentTarget.value);
   };
 
   const handleSelect = (ev) => {
@@ -37,6 +42,19 @@ const Filters = ({
               placeholder="Harry Potter"
             />
           </label>
+          <label htmlFor="specie" className="form__label">
+            Buscar por personaje
+            <input
+              className="form__input"
+              type="text"
+              name="specie"
+              id="specie"
+              onChange={handleInputSpecie}
+              value={filterSpecie}
+              placeholder="Human"
+            />
+          </label>
+
           <label htmlFor="houses" className="form__label">
             Buscar por casa
             <select

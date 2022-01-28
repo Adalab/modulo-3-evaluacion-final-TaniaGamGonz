@@ -23,6 +23,7 @@ const CharacterList = ({ characters }) => {
               name={character.name}
               specie={character.specie}
               gender={character.gender}
+              id={character.id}
             />
           </li>
         );
