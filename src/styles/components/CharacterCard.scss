@@ -1,9 +1,10 @@
 @import "../core/animations";
 @import "../core/variables";
+@import "../../styles/core/fonts";
 
 .character-card {
   width: 200px;
-  height: 350px;
+
   background-color: $primary-color;
   &:hover {
     animation-name: float;
@@ -13,6 +14,8 @@
   &__img {
     width: 100%;
     height: 100%;
+    max-height: 250px;
+    min-height: 250px;
     object-fit: fill;
     &--container {
       width: 100%;
@@ -20,11 +23,15 @@
     }
   }
   &__info {
+    font-family: letter;
     padding: 10px;
+    background-image: url(../../images/letter.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   &__text {
     text-decoration: none;
-    color: $text-color;
-    font-size: 1.9rem;
+    color: black;
+    font-size: 4rem;
   }
 }

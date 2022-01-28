@@ -9,6 +9,14 @@
   align-items: center;
   margin-bottom: 20px;
   padding-left: 10px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(181, 181, 181, 0.2413340336134454) 10%,
+    rgba(74, 74, 74, 0.5438550420168067) 61%,
+    rgba(38, 38, 38, 0.6110819327731092) 84%
+  );
 
   h1 {
     font-family: "harry";

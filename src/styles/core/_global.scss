@@ -20,7 +20,8 @@ html {
 }
 
 body {
-  background-color: $secondary-color;
+  background-image: url(../../images/wallpaper.jpeg);
+  background-repeat: repeat;
 }
 .hidden {
   display: none;
