@@ -1,6 +1,8 @@
 # Evaluación final modulo 3 Tania Gamero Gonzalez
 
 Project made in react, a simple SPA where you can do a request to an Api and search characters from Harry Potter
+  
+*This project is still under deploy*
 
 ## Tecnologies
 
