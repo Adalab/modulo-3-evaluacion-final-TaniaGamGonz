@@ -18,4 +18,4 @@ Project made in react, a simple SPA where you can do a request to an Api and sea
 ## Deployment
 
 To use this project, please first `npm install` and then `npm start`.
-You can also try it on this website http://beta.adalab.es/modulo-3-evaluacion-final-TaniaGamGonz/#/
+You can also try it on this website https://taniagamgonz.github.io/harry-potter-character-searcher/#/
