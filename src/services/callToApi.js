@@ -1,6 +1,6 @@
 const getByHouse = (selectedHouse) => {
   return fetch(
-    `http://hp-api.herokuapp.com/api/characters/house/${selectedHouse}`
+    `https://hp-api.herokuapp.com/api/characters/house/${selectedHouse}`
   )
     .then((response) => response.json())
     .then((response) => {
