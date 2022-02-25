@@ -6,7 +6,6 @@ const getByHouse = (selectedHouse) => {
     .then((response) => {
       const infoCleaned = response.map((character) => {
         const characterInfo = {
-          photo: character.image,
           name: character.name,
           specie: character.species,
           house: character.house,
@@ -14,6 +13,9 @@ const getByHouse = (selectedHouse) => {
           gender: character.gender,
           ancestry: character.ancestry,
         };
+        if (character.image) {
+          characterInfo.photo = character.image;
+        }
         return characterInfo;
       });
       return infoCleaned;

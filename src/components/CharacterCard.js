@@ -10,7 +10,7 @@ const CharacterCard = ({ photo, name, specie, gender }) => {
       <article className="character-card">
         <div className="character-card__img--container">
           <img
-            src={photo || noFoto}
+            src={photo}
             alt={name}
             title={name}
             className="character-card__img"
