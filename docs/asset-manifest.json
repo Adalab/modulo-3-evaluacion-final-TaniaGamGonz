@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "./static/css/main.73759155.css",
-    "main.js": "./static/js/main.02cf6561.js",
+    "main.css": "./static/css/main.bf581fde.css",
+    "main.js": "./static/js/main.708fb050.js",
+    "static/media/gifHarry.gif": "./static/media/gifHarry.0da5030c2998f95f7bc8.gif",
     "static/media/ravenclaw.png": "./static/media/ravenclaw.9610bcde136dbfa89da6.png",
     "static/media/gryffindor.png": "./static/media/gryffindor.5c4db2d2fff6851a55cb.png",
     "static/media/hufflepuff.png": "./static/media/hufflepuff.f6d11a5457195a54f900.png",
     "static/media/slytherin.png": "./static/media/slytherin.2f1ae1364423a77ea790.png",
     "static/media/logoHarry.png": "./static/media/logoHarry.ee31658a5a6736912f7b.png",
     "static/media/invisible.png": "./static/media/invisible.a295ea2170073a88b8ab.png",
+    "static/media/letter.jpeg": "./static/media/letter.e56cdf56429ee6a2d0d8.jpeg",
     "static/media/rip.png": "./static/media/rip.ec235ae0b39eaf8b2da5.png",
+    "static/media/letterFont.ttf": "./static/media/letterFont.06637ca24812c5de0414.ttf",
+    "static/media/principal.ttf": "./static/media/principal.599d26584b9afc1d20b1.ttf",
     "static/media/harry.TTF": "./static/media/harry.a65869c0c1a4b3d4fcfc.TTF",
+    "static/media/wallpaper.jpeg": "./static/media/wallpaper.b7a6fc465f2baf0b68ef.jpeg",
     "index.html": "./index.html",
-    "main.73759155.css.map": "./static/css/main.73759155.css.map",
-    "main.02cf6561.js.map": "./static/js/main.02cf6561.js.map"
+    "main.bf581fde.css.map": "./static/css/main.bf581fde.css.map",
+    "main.708fb050.js.map": "./static/js/main.708fb050.js.map"
   },
   "entrypoints": [
-    "static/css/main.73759155.css",
-    "static/js/main.02cf6561.js"
+    "static/css/main.bf581fde.css",
+    "static/js/main.708fb050.js"
   ]
 }
