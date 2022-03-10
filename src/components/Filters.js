@@ -25,6 +25,7 @@ const Filters = ({
   const handleReset = () => {
     setFilterName("");
     setSelectedHouse("gryffindor");
+    setSelectedAncestry("");
   };
 
   return (

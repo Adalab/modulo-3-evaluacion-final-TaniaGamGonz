@@ -7,4 +7,11 @@
   .card {
     justify-self: center;
   }
+  .not-found-message {
+    font-size: 17px;
+    width: 100%;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    padding: 20px;
+  }
 }

@@ -26,7 +26,10 @@ function App() {
       return character.name.toLowerCase().includes(filterName.toLowerCase());
     })
     .filter((character) => {
-      return character.ancestry === selectedAncestry;
+      if (selectedAncestry !== "") {
+        return character.ancestry === selectedAncestry;
+      }
+      return character;
     });
 
   //Render functions

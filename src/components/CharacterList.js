@@ -28,9 +28,9 @@ const CharacterList = ({ characters }) => {
       });
     } else {
       return (
-        <li>
+        <li className="not-found-message">
           Vaya...parece que ninguno de nuestros personajes coincide con tu
-          búsqueda, prueba de nuevo con otro nombre.
+          búsqueda, prueba de nuevo con otros datos.
         </li>
       );
     }
